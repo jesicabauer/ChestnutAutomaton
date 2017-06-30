@@ -12,8 +12,10 @@ public class GUI implements ActionListener
     
     private JFrame window;
     private JButton start, reset;
+    private JTextField counterr; 
     private Timer timer;
     private JPanel mainPanel;
+    private int counter = 0; 
     
     private ChangeGenerator gen;
     private Rectangle[][] canker;
@@ -54,8 +56,13 @@ public class GUI implements ActionListener
         reset.addActionListener( this );
         reset.setAlignmentX( Component.CENTER_ALIGNMENT );
         
+        counterr = new JTextField("counter"); 
+        counterr.setPreferredSize( new Dimension (70, 30) );
+        counterr.setEditable(false);
+        
         buttonPanel.add( start );
         buttonPanel.add( reset );
+        buttonPanel.add( counterr );
         
         window.add( mainPanel );
         window.add( buttonPanel );
@@ -99,13 +106,22 @@ public class GUI implements ActionListener
                 c = Color.blue;
                 break; 
             case ProblemSpec.PEZ_STATUS: 
+            	c = Color.cyan; 
+            	break;
+            case ProblemSpec.UMB_STATUS:
+            	c = Color.pink; 
+            	break;
+            case ProblemSpec.STRASS_STATUS:
             	c = Color.orange; 
+            	break;
+            case ProblemSpec.NECTRIA_STATUS:
+            	c = Color.yellow; 
+            	break;
+            case ProblemSpec.TRICH_STATUS:
+            	c = Color.gray; 
             	break;
             case ProblemSpec.NONCP_STATUS: 
             	c = Color.magenta;
-            	break; 
-            case ProblemSpec.UNKNOWN_STATUS: 
-            	c = Color.cyan;
             	break; 
             case ProblemSpec.HEALING_STATUS: 
             	c = Color.black; 
@@ -122,6 +138,7 @@ public class GUI implements ActionListener
             {
                 canker[i][j].setBackground( getCellColor( grid[i][j] ) );
             }
+        counter++; 
         window.repaint(); 
     }
     
@@ -138,6 +155,8 @@ public class GUI implements ActionListener
             else
             {
                 start.setText( "Start" );
+                counterr.setText(Integer.toString(counter));
+                System.out.println(counter);
                 timer.stop();
             }
         }
@@ -145,6 +164,7 @@ public class GUI implements ActionListener
         {
             timer.stop();
             start.setText( "Start" );
+            counter = 0; 
             gen.reset();
             displayGrid( gen.getGrid() );
         }

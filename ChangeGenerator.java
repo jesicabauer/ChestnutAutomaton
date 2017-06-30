@@ -29,43 +29,59 @@ public class ChangeGenerator
         // 2: 33, 20, 11, 3, 25
         // 3: 32, 23, 9, 3, 24
         // 4: 27, 37, 8, 1, 21
-        for (int i = 0; i < 0.5*GRID_SIZE; i++) {
-        	int rowInfect = (int)(Math.random()*canker.length); 
-        	int colInfect = (int)(Math.random()*canker[0].length); 
-        	canker[rowInfect][colInfect] = ProblemSpec.VIRAL_STATUS; 
-        }
-      
-        for (int i = 0; i < 0.5*GRID_SIZE; i++) {
-        	int rowInfect = (int)(Math.random()*canker.length); 
-        	int colInfect = (int)(Math.random()*canker[0].length); 
-        	canker[rowInfect][colInfect] = ProblemSpec.INFECTED_STATUS; 
-        }
-        
-        for (int i = 0; i < 0.5*GRID_SIZE; i++) {
-        	int rowInfect = (int)(Math.random()*canker.length); 
-        	int colInfect = (int)(Math.random()*canker[0].length); 
-        	canker[rowInfect][colInfect] = ProblemSpec.PEN_STATUS; 
-        }
-        
-        for (int i = 0; i < 0.5*GRID_SIZE; i++) {
-        	int rowInfect = (int)(Math.random()*canker.length); 
-        	int colInfect = (int)(Math.random()*canker[0].length); 
-        	canker[rowInfect][colInfect] = ProblemSpec.PEZ_STATUS; 
-        }
-        
-
-        
-        for (int i = 0; i < 0.5*GRID_SIZE; i++) {
-        	int rowInfect = (int)(Math.random()*canker.length); 
-        	int colInfect = (int)(Math.random()*canker[0].length); 
-        	canker[rowInfect][colInfect] = ProblemSpec.NONCP_STATUS; 
-        }
-        
-        for (int i = 0; i < 0.5*GRID_SIZE; i++) {
-        	int rowInfect = (int)(Math.random()*canker.length); 
-        	int colInfect = (int)(Math.random()*canker[0].length); 
-        	canker[rowInfect][colInfect] = ProblemSpec.UNKNOWN_STATUS; 
-        }
+//        for (int i = 0; i < 0.5*GRID_SIZE; i++) {
+//        	int rowInfect = (int)(Math.random()*canker.length); 
+//        	int colInfect = (int)(Math.random()*canker[0].length); 
+//        	canker[rowInfect][colInfect] = ProblemSpec.INFECTED_STATUS; 
+//        }
+//      
+//        for (int i = 0; i < 1; i++) {
+//        	int rowInfect = (int)(Math.random()*canker.length); 
+//        	int colInfect = (int)(Math.random()*canker[0].length); 
+//        	canker[rowInfect][colInfect] = ProblemSpec.VIRAL_STATUS; 
+//        }
+//        
+//        for (int i = 0; i < 0.5*GRID_SIZE; i++) {
+//        	int rowInfect = (int)(Math.random()*canker.length); 
+//        	int colInfect = (int)(Math.random()*canker[0].length); 
+//        	canker[rowInfect][colInfect] = ProblemSpec.PEN_STATUS; 
+//        }
+//        
+//        for (int i = 0; i < 0.5*GRID_SIZE; i++) {
+//        	int rowInfect = (int)(Math.random()*canker.length); 
+//        	int colInfect = (int)(Math.random()*canker[0].length); 
+//        	canker[rowInfect][colInfect] = ProblemSpec.PEZ_STATUS; 
+//        }
+//        
+//        for (int i = 0; i < 0.5*GRID_SIZE; i++) {
+//        	int rowInfect = (int)(Math.random()*canker.length); 
+//        	int colInfect = (int)(Math.random()*canker[0].length); 
+//        	canker[rowInfect][colInfect] = ProblemSpec.UMB_STATUS; 
+//        }
+//        
+//        for (int i = 0; i < 0.5*GRID_SIZE; i++) {
+//        	int rowInfect = (int)(Math.random()*canker.length); 
+//        	int colInfect = (int)(Math.random()*canker[0].length); 
+//        	canker[rowInfect][colInfect] = ProblemSpec.STRASS_STATUS; 
+//        }
+//        
+//        for (int i = 0; i < 0.5*GRID_SIZE; i++) {
+//        	int rowInfect = (int)(Math.random()*canker.length); 
+//        	int colInfect = (int)(Math.random()*canker[0].length); 
+//        	canker[rowInfect][colInfect] = ProblemSpec.NECTRIA_STATUS; 
+//        }
+//        
+//        for (int i = 0; i < 0.5*GRID_SIZE; i++) {
+//        	int rowInfect = (int)(Math.random()*canker.length); 
+//        	int colInfect = (int)(Math.random()*canker[0].length); 
+//        	canker[rowInfect][colInfect] = ProblemSpec.TRICH_STATUS; 
+//        }
+//        
+//        for (int i = 0; i < 0.5*GRID_SIZE; i++) {
+//        	int rowInfect = (int)(Math.random()*canker.length); 
+//        	int colInfect = (int)(Math.random()*canker[0].length); 
+//        	canker[rowInfect][colInfect] = ProblemSpec.NONCP_STATUS; 
+//        }
         
         
         // THIS IS WHERE THE CLOCK IS
@@ -95,7 +111,35 @@ public class ChangeGenerator
 //        canker[centerRow][centerCol - 5]       = ProblemSpec.clock[21]; // 10i
 //        canker[centerRow][centerCol + 5]       = ProblemSpec.clock[22]; // 11i
 //        canker[centerRow][centerCol + 12]      = ProblemSpec.clock[23]; // 12i
-        
+//        
+        for (int i = -3; i < 3; i++) {
+        	for (int j = -3; j < 3; j++) {
+	      canker[centerRow - 20 + i][centerCol + 10 + j] = ProblemSpec.clock[0]; // 1
+	      canker[centerRow - 11 + i][centerCol + 16 + j] = ProblemSpec.clock[1]; // 2
+	      canker[centerRow + i][centerCol + 20 + j]      = ProblemSpec.clock[2]; // 3
+	      canker[centerRow + 11 + i][centerCol + 16 + j] = ProblemSpec.clock[3]; // 4
+	      canker[centerRow + 20 + i][centerCol + 10 + j] = ProblemSpec.clock[4]; // 5
+	      canker[centerRow + 25 + i][centerCol + j]      = ProblemSpec.clock[5]; // 6
+	      canker[centerRow + 20 + i][centerCol - 10 + j] = ProblemSpec.clock[6]; // 7
+	      canker[centerRow + 11 + i][centerCol - 16 + j] = ProblemSpec.clock[7]; // 8
+	      canker[centerRow + i][centerCol - 20 + j]      = ProblemSpec.clock[8]; // 9
+	      canker[centerRow - 11 + i][centerCol - 16 + j] = ProblemSpec.clock[9]; // 10
+	      canker[centerRow - 20 + i][centerCol - 10 + j] = ProblemSpec.clock[10]; // 11
+	      canker[centerRow - 25 + i][centerCol + j]      = ProblemSpec.clock[11]; // 12
+	      canker[centerRow - 11 + i][centerCol + 10 + j] = ProblemSpec.clock[12]; // 1i
+	      canker[centerRow - 5 + i][centerCol + 5 + j]   = ProblemSpec.clock[13]; // 2i
+	      canker[centerRow + 5 + i][centerCol - 5 + j]   = ProblemSpec.clock[14]; // 3i
+	      canker[centerRow + 11 + i][centerCol - 10 + j] = ProblemSpec.clock[15]; // 4i
+	      canker[centerRow - 11 + i][centerCol - 10 + j] = ProblemSpec.clock[16]; // 5i
+	      canker[centerRow - 5 + i][centerCol - 5 + j]   = ProblemSpec.clock[17]; // 6i
+	      canker[centerRow + 5 + i][centerCol + 5 + j]   = ProblemSpec.clock[18]; // 7i
+	      canker[centerRow + 11 + i][centerCol + 10 + j] = ProblemSpec.clock[19]; // 8i
+	      canker[centerRow + i][centerCol - 12 + j]      = ProblemSpec.clock[20]; // 9i
+	      canker[centerRow + i][centerCol - 5 + j]       = ProblemSpec.clock[21]; // 10i
+	      canker[centerRow + i][centerCol + 5 + j]       = ProblemSpec.clock[22]; // 11i
+	      canker[centerRow + i][centerCol + 12 + j]      = ProblemSpec.clock[23]; // 12i
+        	}
+        }
          
         
     }
@@ -132,7 +176,7 @@ public class ChangeGenerator
                 int oldStatus = canker[row][col];
                 int newStatus = getNewStatus( row, col );
                 
-                if ( newStatus != oldStatus )
+                if ( newStatus != oldStatus ) // THIS IS WHERE YOU PUT THE MOVING THINGS! :D
                 {
                     if ( newStatus == ProblemSpec.INFECTED_STATUS )
                     {
@@ -286,8 +330,11 @@ public class ChangeGenerator
         double pVirus = 0.0;
         double pPen = 0.0;
         double pPez = 0.0;
-        double pNonCP = 0.0;
-        double pUnknown = 0.0; 
+        double pUmb = 0.0; 
+        double pStrass = 0.0; 
+        double pNect = 0.0; 
+        double pTrich = 0.0; 
+        double pNonCP = 0.0; 
         double pHealthy = 0.0; 
         double pNormal = 0.0;
         
@@ -316,12 +363,21 @@ public class ChangeGenerator
                         	pPez += ProblemSpec.getProbability( currStatus, 
                         			  							 ProblemSpec.PEZ_STATUS );
                         	break;
-                        case ProblemSpec.NONCP_STATUS: 
-                        	pNonCP += ProblemSpec.getProbability(currStatus, 
-                        											ProblemSpec.NONCP_STATUS);
+                        case ProblemSpec.UMB_STATUS: 
+                        	pUmb += ProblemSpec.getProbability(currStatus, 
+                        											ProblemSpec.UMB_STATUS);
                         	break;
-                        case ProblemSpec.UNKNOWN_STATUS:
-                        	pUnknown += ProblemSpec.getProbability(currStatus, ProblemSpec.UNKNOWN_STATUS);
+                        case ProblemSpec.STRASS_STATUS:
+                        	pStrass += ProblemSpec.getProbability(currStatus, ProblemSpec.STRASS_STATUS);
+                        	break;
+                        case ProblemSpec.NECTRIA_STATUS:
+                        	pNect += ProblemSpec.getProbability(currStatus, ProblemSpec.NECTRIA_STATUS);
+                        	break;
+                        case ProblemSpec.TRICH_STATUS:
+                        	pTrich += ProblemSpec.getProbability(currStatus, ProblemSpec.TRICH_STATUS);
+                        	break;
+                        case ProblemSpec.NONCP_STATUS:
+                        	pNonCP += ProblemSpec.getProbability(currStatus, ProblemSpec.NONCP_STATUS);
                         	break;
                         case ProblemSpec.HEALING_STATUS:
                         	pHealthy += ProblemSpec.getProbability(currStatus, 
@@ -341,10 +397,13 @@ public class ChangeGenerator
         pVirus += pInfect;
         pPen += pVirus; 
         pPez += pPen;
-        pNonCP += pPez;
+        pUmb += pPez;
+        pStrass += pUmb;
+        pNect += pStrass;
+        pTrich += pNect; 
+        pNonCP += pNect;
         pHealthy += pNonCP; 
-        pUnknown += pHealthy; 
-        pNormal += pUnknown;
+        pNormal += pHealthy;
         
         if ( pNormal > 1.0 )
             System.out.println( "ERROR: pNormal == " + pNormal );
@@ -378,12 +437,25 @@ public class ChangeGenerator
         {
             return ProblemSpec.PEZ_STATUS;
         }
+        else if ( chance < pUmb )
+        {
+            return ProblemSpec.UMB_STATUS;
+        }
+        else if ( chance < pStrass )
+        {
+            return ProblemSpec.STRASS_STATUS;
+        }
+        else if ( chance < pNect )
+        {
+            return ProblemSpec.NECTRIA_STATUS;
+        }
+        else if ( chance < pTrich )
+        {
+            return ProblemSpec.TRICH_STATUS;
+        }
         else if ( chance < pNonCP )
         {
             return ProblemSpec.NONCP_STATUS;
-        }
-        else if ( chance < pUnknown) {
-        	return ProblemSpec.UNKNOWN_STATUS;
         }
         else if ( chance < pHealthy )
         {
